@@ -67,8 +67,25 @@ docker build -t financial-research-assistant .
 docker run -p 8000:8000 \
   -e OPENAI_API_KEY=sk-... \
   -e PINECONE_API_KEY=... \
+  -e API_KEY=your-secret-key \
   financial-research-assistant
 ```
+
+---
+
+## Deploy to Render
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Ritaldojr7/Financial-Research-Assistant)
+
+Or manually:
+
+1. Go to [render.com/new](https://render.com/new) and select **Web Service**
+2. Connect your GitHub repo `Ritaldojr7/Financial-Research-Assistant`
+3. Render auto-detects the Dockerfile — keep defaults
+4. Add environment variables: `OPENAI_API_KEY`, `PINECONE_API_KEY`, `API_KEY`
+5. Click **Deploy**
+
+Your app will be live at `https://financial-research-assistant-xxxx.onrender.com/docs`
 
 ---
 
