@@ -6,7 +6,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, RedirectResponse
 from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 
@@ -97,6 +97,11 @@ def create_app() -> FastAPI:
     app.include_router(query_router)
     app.include_router(ingest_router)
     app.include_router(extract_router)
+
+    @app.get("/", include_in_schema=False)
+    async def root():
+        """Bare domain has no API handler; send users to interactive docs."""
+        return RedirectResponse(url="/docs")
 
     @app.get("/health", tags=["Health"])
     async def health():
