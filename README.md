@@ -75,7 +75,7 @@ docker run -p 8000:8000 \
 
 ## Deploy to Render
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Ritaldojr7/Financial-Research-Assistant)
+[Deploy to Render](https://render.com/deploy?repo=https://github.com/Ritaldojr7/Financial-Research-Assistant)
 
 Or manually:
 
